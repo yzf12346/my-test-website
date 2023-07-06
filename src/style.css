@@ -1,0 +1,135 @@
+@font-face {
+    font-family: maobi;
+    src: url("/fonts/WenYue-WLHRuYiFaKai-JF-2.otf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+
+    user-select: none;
+    user-zoom: 1;
+}
+
+body {
+    background-color: #7d0f15;
+}
+
+.loading {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    z-index: 100;
+
+    opacity: 1;
+    transition: 200ms ease;
+}
+
+.loading.done {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading span {
+    color: #222;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 4px 4px 5px #0005;
+}
+
+.container {
+    scroll-snap-type: y mandatory;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    visibility: hidden;
+}
+
+.page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    /* border: 1px solid #000; */
+
+    scroll-snap-align: center;
+    overflow: hidden;
+}
+
+.page1 {
+    background-color: #7d0f15;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page1 .title {
+    font-size: 5rem;
+    font-family: maobi;
+
+    text-shadow: 5px 5px 10px #0005;
+}
+
+.page1 .tips {
+    font-weight: bold;
+    text-shadow: 5px 5px 10px #0005;
+}
+
+.page2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.page2 img {
+    width: 100vw;
+}
+
+.text {
+    width: 100%;
+    height: auto;
+    background-color: rebeccapurple;
+    flex: 1;
+
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.page3 {
+    width: 100%;
+    overflow: hidden;
+}
+
+.page3 img {
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    top: 0;
+}
+
+.page3 img.jyt{
+    transform: translateX(100vw);
+    transition: 0.5s;
+}
+
+.page3 img.cjj{
+    transform: translateX(-100vw);
+    transition: 0.5s;
+}
+
+.page3.active img.jyt{
+    transform: translateX(0);
+}
+
+.page3.active img.cjj{
+    transform: translateX(0);
+}
